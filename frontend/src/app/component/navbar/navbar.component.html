@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black px-4 py-3 border-bottom border-secondary">
+  <a class="navbar-brand text-danger fw-bold fs-3" routerLink="/">MY-KINO</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+   
+
+    <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-1 shadow-sm" style="min-width: 300px;">
+      <i class="bi bi-robot text-danger me-2"></i> <input 
+        type="text" 
+        class="form-control bg-transparent border-0 text-white shadow-none" 
+        [(ngModel)]="searchQuery" 
+        (keyup.enter)="onAiSearch()"
+        placeholder="Опишите сцену из фильма...">
+      <button class="btn btn-sm btn-danger rounded-pill px-3" (click)="onAiSearch()">Найти</button>
+    </div>
+
+    <button class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0" (click)="logout()">
+      Выйти
+    </button>
+  </div>
+</nav>

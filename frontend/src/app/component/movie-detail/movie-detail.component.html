@@ -1,0 +1,25 @@
+<div class="container mt-5 text-white">
+
+  <div *ngIf="isLoading" class="text-center py-5">
+    <div class="spinner-border text-danger" role="status"></div>
+    <p class="mt-2">Загружаем фильм...</p>
+  </div>
+
+  <div class="row" *ngIf="!isLoading && movie">
+    
+    <div class="col-lg-4">
+      <img [src]="movie.poster_url" class="img-fluid rounded shadow border border-secondary mb-3">
+      <h2 class="fw-bold">{{ movie.title }}</h2>
+      <p class="text-danger">{{ movie.genre_name }} | {{ movie.year }}</p>
+      <p class="opacity-75">{{ movie.description }}</p>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="player-wrapper bg-black rounded overflow-hidden shadow-lg border border-dark">
+        <div class="kinobox_player" style="width: 100%; min-height: 500px; background: #000;">
+           </div>
+      </div>
+    </div>
+
+  </div>
+</div>

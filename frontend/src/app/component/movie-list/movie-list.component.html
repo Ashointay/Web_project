@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-white">Популярные фильмы</h2>
+    
+    <div class="btn-group">
+      <button class="btn btn-outline-light btn-sm rounded-pill me-2" (click)="filterGenre('All')">Все</button>
+      <button *ngFor="let genre of genres" class="btn btn-outline-secondary btn-sm rounded-pill me-2" (click)="filterGenre(genre)">
+        {{ genre }}
+      </button>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let movie of filteredMovies">
+      <div class="card bg-transparent border-0 movie-card" [routerLink]="['/movie', movie.id]">
+        <div class="position-relative overflow-hidden rounded shadow">
+          <img [src]="movie.poster_url" class="card-img-top img-fluid" alt="Poster" style="height: 300px; object-fit: cover;">
+          <div class="hover-overlay"></div>
+        </div>
+        <div class="card-body px-0 py-2">
+          <h6 class="text-white text-truncate mb-0">{{ movie.title }}</h6>
+          <small class="text-secondary">{{ movie.year }} • {{ movie.genre_name }}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" *ngIf="filteredMovies.length === 0">
+      <h4 class="text-secondary">Фильмы не найдены или нет подписки</h4>
+    </div>
+  </div>
+</div>
