@@ -1,59 +1,67 @@
-# Frontend
+🚀 MY-KINO — Образовательный онлайн-кинотеатр
+Современное Full-stack приложение для просмотра фильмов с интеграцией искусственного интеллекта для семантического поиска. Проект разработан в рамках обучения разработке высоконагруженных систем.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+👥 Команда проекта
+Над проектом работали:
 
-## Development server
+Айгерим — Frontend-разработка (Angular), дизайн интерфейса и UX.
 
-To start a local development server, run:
+Ерасыл — Backend-архитектура (Django), проектирование БД и API.
 
-```bash
+Ерасыл — Реализация логики ИИ-поиска и парсинг данных через TMDB API.
+
+🛠 Технологический стек
+Frontend
+Angular 18+ — Мощный фреймворк для SPA.
+
+Bootstrap 5 — Стилизация и адаптивная верстка.
+
+RxJS — Управление асинхронными потоками данных.
+
+JWT Auth — Безопасная авторизация через токены.
+
+Backend
+Python 3.10+ / Django 5 — Основной серверный каркас.
+
+Django REST Framework (DRF) — Создание гибкого API.
+
+SQLite — База данных для хранения контента и пользователей.
+
+CORS Headers — Настройка взаимодействия между разными доменами.
+
+AI & Data
+Scikit-learn — Использование TfidfVectorizer и cosine_similarity для поиска фильма по описанию сцены (NLP).
+
+TMDB API — Автоматизированный сбор данных о фильмах.
+
+🌟 Основные функции
+Умный поиск (AI Search): Найдите фильм, даже если забыли название — просто опишите сцену своими словами.
+
+Подписочная модель: Доступ к контенту регулируется статусом подписки пользователя.
+
+Фильтрация: Удобная сортировка по жанрам и типам контента (Фильмы / Сериалы).
+
+Личный кабинет: Система отзывов и оценок для каждого фильма.
+
+Адаптивный плеер: Интеграция видео через безопасные iframe-ссылки.
+
+🚀 Как запустить проект
+1. Клонирование репозитория
+Bash
+git clone https://github.com/your-username/my-kino.git
+cd my-kino
+2. Настройка бэкенда
+Bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Для Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py fill_db  # Заполнение базы фильмами из TMDB
+python manage.py runserver
+3. Настройка фронтенда
+Bash
+cd frontend
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+После запуска проект будет доступен по адресу: http://localhost:4200
